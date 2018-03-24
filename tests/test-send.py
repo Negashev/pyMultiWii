@@ -15,11 +15,11 @@ from pymultiwii import MultiWii
 
 if __name__ == "__main__":
 
-    #board = MultiWii("/dev/ttyUSB0")
-    board = MultiWii("/dev/tty.usbserial-A801WZA1")
+    board = MultiWii("/dev/ttyUSB0")
+    #board = MultiWii("/dev/tty.usbserial-A801WZA1")
     try:
         while True:
-        	#example of 8 RC channels to be send
+            #example of 8 RC channels to be send
             data = [1500,1550,1600,1560,1000,1040,1000,1000]
             
             # Old function 
@@ -28,6 +28,6 @@ if __name__ == "__main__":
             #New function that will receive attitude after setting the rc commands
             board.sendCMDreceiveATT(16,MultiWii.SET_RAW_RC,data)
             
-            print board.attitude
-    except Exception,error:
-        print "Error on Main: "+str(error)
+#            print(board.attitude)
+    except Exception as error:
+        print("Error on Main: "+str(error))

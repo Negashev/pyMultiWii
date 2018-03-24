@@ -16,8 +16,8 @@ from sys import stdout
 
 if __name__ == "__main__":
 
-    #board = MultiWii("/dev/ttyUSB0")
-    board = MultiWii("/dev/tty.SLAB_USBtoUART")
+    board = MultiWii("/dev/ttyUSB0")
+    #board = MultiWii("/dev/tty.SLAB_USBtoUART")
     try:
         while True:
             board.getData(MultiWii.ATTITUDE)
@@ -28,5 +28,5 @@ if __name__ == "__main__":
             stdout.write("\r%s" % message )
             stdout.flush()
             # End of fancy printing
-    except Exception,error:
-        print "Error on Main: "+str(error)
+    except Exception as error:
+        print("Error on Main: "+str(error))
